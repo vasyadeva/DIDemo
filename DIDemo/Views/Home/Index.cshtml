@@ -1,0 +1,77 @@
+﻿@{
+    var req1 = ViewBag.req1 as Dictionary<string, int>;
+    var req2 = ViewBag.req2 as Dictionary<string, int>;
+}
+
+<h2>Request 1</h2>
+
+@if (req1 != null && req1.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>instance</th>
+                <th>Scoped</th>
+                <th>Singleton</th>
+                <th>Transient</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>1</td>
+                    <td>@req1["scop1"]</td>
+                    <td>@req1["sin1"]</td>
+                    <td>@req1["tr1"]</td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>@req1["scop2"]</td>
+                    <td>@req1["sin2"]</td>
+                    <td>@req1["tr2"]</td>
+
+                </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Empty</p>
+}
+
+<h2>Request 2</h2>
+
+@if (req2 != null && req2.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>instance</th>
+                <th>Scoped</th>
+                <th>Singleton</th>
+                <th>Transient</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>@req2["scop1"]</td>
+                    <td>@req2["sin1"]</td>
+                    <td>@req2["tr1"]</td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>@req2["scop2"]</td>
+                    <td>@req2["sin2"]</td>
+                    <td>@req2["tr2"]</td>
+
+                </tr>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Please reload the page</p>
+}
